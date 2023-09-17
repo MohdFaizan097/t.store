@@ -1,4 +1,8 @@
+
 const displayProducts = document.querySelector('.js-products-grid');
+const addToCartBtn = document.querySelectorAll('.js-add-to-cart-btn');
+
+
 
 const products = [
   {
@@ -50,16 +54,34 @@ products.forEach((product) => {
       <div class="product-spacer"></div>
 
       <div class="added-to-cart">
-        <img src="images/icons/checkmark.png">
         Added
       </div>
 
-      <button class="add-to-cart-button button-primary">
+      <button class="add-to-cart-button button-primary" data-productName = "${product.name}">
         Add to Cart
       </button>
     </div> `;
-
-    // console.log(html);
 });
 
 displayProducts.innerHTML = productsHTML;
+
+// Adding the products into the cart
+
+addToCartBtn.forEach((button) => {
+  button.addEventListener('click', () => {
+    console.log('hey');   
+  });
+});
+
+
+// document.querySelectorAll('.js-add-to-cart-btn').forEach((button) => {
+//   button.addEventListener('click', () => {
+//     console.log("Button clicked");
+//     console.log(button.dataset.productName);
+//   });
+// });
+
+
+
+
+
